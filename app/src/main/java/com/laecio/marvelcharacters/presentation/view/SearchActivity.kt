@@ -1,5 +1,6 @@
 package com.laecio.marvelcharacters.presentation.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.laecio.marvelcharacters.R
@@ -23,8 +24,15 @@ class SearchActivity : AppCompatActivity() {
             val text = binding.searchBar.text.toString()
 
             repository.searchByName(text,
-                {
-                 binding.title.text =   it.data.results[0].name
+                { hero ->
+                  val intent = Intent(this, InfosHero::class.java )
+                    val b = Bundle()
+
+                    b.putString("name", hero.data.results[0].name)
+                    b.putString("description", hero.data.results[0].description)
+
+                    intent.putExtras(b)
+                    startActivity(intent)
                 },
                 {}
             )
