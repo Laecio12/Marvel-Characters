@@ -4,4 +4,6 @@
     <string name="heroes">Heroes</string>
     <string name="favorite_hero">What\'s your favorite hero?</string>
     <string name="search_info">Buscando informações&#8230;</string>
+    <string name="comic">Quadrinho</string>
+    <string name="comics">Quadrinhos</string>
 </resources>

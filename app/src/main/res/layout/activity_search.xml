@@ -53,10 +53,10 @@
         android:layout_marginStart="50sp"
         android:background="@drawable/edit_text_border"
         android:hint="@string/favorite_hero"
-        android:inputType="text"
         android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:inputType="textCapWords|textCapSentences"
         app:layout_constraintTop_toBottomOf="@id/toolbar"/>
 
     <androidx.appcompat.widget.AppCompatImageButton

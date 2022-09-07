@@ -27,9 +27,15 @@ class SearchActivity : AppCompatActivity() {
                 { hero ->
                   val intent = Intent(this, InfosHero::class.java )
                     val b = Bundle()
+                    val comics = arrayListOf<String?>()
 
+                    hero.data.results[0].comics?.items?.forEach{ comic ->
+                        comics.add(comic?.name)
+
+                    }
                     b.putString("name", hero.data.results[0].name)
                     b.putString("description", hero.data.results[0].description)
+                    b.putStringArrayList("comics", comics)
 
                     intent.putExtras(b)
                     startActivity(intent)
